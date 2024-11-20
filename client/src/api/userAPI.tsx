@@ -1,3 +1,5 @@
+//todo update this to fit more for logging in and fetching data
+
 import Auth from '../utils/auth';
 
 const retrieveUsers = async () => {

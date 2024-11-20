@@ -1,26 +1,40 @@
+//This holds the configuration for the Client side of the program
+
 {
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-    "target": "ES2020",
-    "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
-    "module": "ESNext",
-    "skipLibCheck": true,
+    /* Language and Environment */
+    "target": "ES2020",  // Modern JavaScript for better compatibility with newer browsers
 
-    /* Bundler mode */
-    "moduleResolution": "Bundler",
-    "allowImportingTsExtensions": true,
-    "isolatedModules": true,
-    "moduleDetection": "force",
-    "noEmit": true,
-    "jsx": "react-jsx",
+    /* Modules */
+    "module": "ESNext",  // Use ESNext for client-side JavaScript
+    "moduleResolution": "Bundler",  // This helps when bundling with tools like Vite or Webpack
+ 
+    "skipLibCheck": true,  // Skips type checking of declaration files for better performance
 
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    /* TypeScript Settings */
+    "strict": true,  // Enables strict type checking
+    "noUnusedLocals": true,  // Warns about unused variables
+    "noUnusedParameters": true,  // Warns about unused function parameters
+    "noFallthroughCasesInSwitch": true,  // Ensures all switch cases are handled
+    "exactOptionalPropertyTypes": true,  // Enforces exact matching for optional properties
+    "noImplicitReturns": true,  // Warns about missing returns in functions
+    "noImplicitOverride": true,  // Requires explicit `override` keyword in derived classes
+    "useUnknownInCatchVariables": true,  // Forces catch block variables to be typed as `unknown`
+
+    /* JavaScript Support (Optional) */
+    "allowJs": false,  // Set to `false` if you don't want to include JavaScript files in your TypeScript project
+    "checkJs": false,  // Set to `false` unless you want to type-check JavaScript files
+
+    /* Module Interoperability */
+    "esModuleInterop": true,  // Enables importing CommonJS modules as ES modules
+    "allowSyntheticDefaultImports": true,  // Allows default imports from CommonJS modules that don't have a default export
+
+    /* File System Handling */
+    "forceConsistentCasingInFileNames": true,  // Ensures consistent casing in import paths
+
+    /* Output Directory */
+    "outDir": "./dist"  // Specify the output directory where compiled files will go
   },
-  "include": ["src"]
+  "include": ["client/**/*"],  // Only include files inside the `client` folder
+  "exclude": ["node_modules", "server", "dist"]  // Exclude `node_modules`, `server`, and `dist` folders
 }

@@ -6,7 +6,7 @@ import ErrorPage from "./ErrorPage";
 import auth from '../utils/auth';
 
 const Home = () => {
-
+//does something along the line of confirming and logging in might have put this in the log in page
     const [users, setUsers] = useState<UserData[]>([]);
     const [error, setError] = useState(false);
     const [loginCheck, setLoginCheck] = useState(false);
@@ -43,7 +43,7 @@ const Home = () => {
 
     return (
         <>
-            
+            {/* todo add the home page itself design*/}
         </>
     );
 };
