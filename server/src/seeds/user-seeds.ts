@@ -1,3 +1,7 @@
+//account seeds
+//Todo fix it, it probably doesnt work
+
+
 import { User } from '../models/user.js';
 
 export const seedUsers = async () => {

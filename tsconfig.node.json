@@ -1,24 +1,37 @@
+//This hols the configurations for the server side of the program
+
 {
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
-    "target": "ES2022",
-    "lib": ["ES2023"],
+    /* Language and Environment */
+    "target": "ES2020",
+
+    /* Modules */
+  
     "module": "ESNext",
+    "moduleResolution": "Node",
     "skipLibCheck": true,
 
-    /* Bundler mode */
-    "moduleResolution": "Bundler",
-    "allowImportingTsExtensions": true,
-    "isolatedModules": true,
-    "moduleDetection": "force",
-    "noEmit": true,
+    /* JavaScript Support */
+    "allowJs": true,
+    "checkJs": true,
 
-    /* Linting */
+    /* Interop Constraints */
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Type Checking */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "useUnknownInCatchVariables": true,
+     /* Output Directory */
+     "outDir": "./dist"  // Specify the output directory where compiled files will go
   },
-  "include": ["vite.config.ts"]
+  "include": ["server/**/*"], /* Target all files inside the server folder */
+  "exclude": ["node_modules", "client", "dist"]
 }
