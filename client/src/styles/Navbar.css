@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400;700&display=swap');
+
+/* General Styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  /* These properties help ensure that fonts look smoother and more consistent across WebKit and Firefox browsers */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Anti-aliasing enhances the readability and visual quality of text, which is important when you're aiming for a clean, polished UI. This is especially important for fonts like serif or italic styles, which can appear a bit rough or pixelated without proper smoothing. */
+}
+
+/* Hamburger Icon */
+.hamburger-icon {
+  background-color: transparent;
+  border: none;
+  display: block;
+  cursor: pointer;
+  position: fixed;  /* Fixed position to prevent shrinking */
+  top: 30px;
+  left: 30px;
+  z-index: 1002;  /* Ensure it's above other elements */
+  width: 40px;  /* Explicit size */
+  height: 35px; /* Explicit size */
+  display: flex;  /* Flex to ensure the icon stays centered */
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Home Logo (Positioned Next to Hamburger) */
+.logo-link {
+  position: fixed; /* Fixed position */
+  top: 20px;
+  left: 80px; /* Adjust as needed for spacing from hamburger */
+  z-index: 1002; /* Ensure it's above other elements */
+}
+
+.logo {
+  width: 35px;  /* Fixed size for logo */
+  height: auto; /* Maintain aspect ratio */
+}
+
+/* Side Navigation */
+.side-nav {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-weight: 100;
+  line-height: 2;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #7E4D50;
+  color: white;
+  overflow: hidden;
+  transition: left 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding-top: 40px;
+}
+
+.side-nav.open {
+  left: 0;
+}
+
+/* Remove bullet points from the list */
+.side-nav nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 70px;
+  margin-left: 40px;
+}
+
+/* List item styling */
+.side-nav nav ul li {
+  margin-bottom: 15px;
+}
+
+/* Links inside side navigation */
+.side-nav nav ul li a {
+  color: #EADDDD;
+  text-decoration: none;
+  font-size: 22px;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect for links */
+.side-nav nav ul li a:hover {
+  color: white;
+}
+
+/* Sign up/Login Link */
+.auth-link {
+  position: fixed;
+  top: 30px;
+  right: 45px;
+  z-index: 1002;
+}
+
+.auth-link a {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+  color: #EADEDD;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.auth-link a:hover {
+  color: white;
+}
+
+/* Close Button (X) */
+.close-button {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #EADEDD;
+  font-size: 20px !important;
+  font-weight: 100;
+  cursor: pointer;
+}
