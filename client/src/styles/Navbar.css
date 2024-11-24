@@ -8,6 +8,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* Anti-aliasing enhances the readability and visual quality of text, which is important when you're aiming for a clean, polished UI. This is especially important for fonts like serif or italic styles, which can appear a bit rough or pixelated without proper smoothing. */
+  
 }
 
 /* Hamburger Icon */
