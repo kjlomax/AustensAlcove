@@ -7,7 +7,14 @@ import auth from '../utils/auth';
 const Navbar = () => {
   
   return (
- 
+      <>
+      
+      <Link to="/searchLibary">Search Libary</Link>
+      <Link to="/searchProfiles">Search Profiles</Link>
+      <Link to="/searchMovies">Search Movies</Link>
+      <Link to="/login"></Link>
+      <Link to="/viewProfile"></Link>
+      </>
   );
 };
 

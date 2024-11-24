@@ -1,24 +1,12 @@
 import * as dotenv from 'dotenv';
 dotenv.config();
+import { BooksMore } from './books';
+import {UserMore} from  './user'
+import sequelize from '../config/connections'
 
-import { Sequelize } from 'sequelize';
+const Books = BooksMore(sequelize);
+const User = UserMore(sequelize);
 
-
-const sequelize = process.env.DB_URL
-  ? new Sequelize(process.env.DB_URL)
-  : new Sequelize(
-      process.env.DB_NAME || '',
-      process.env.DB_USER || '',
-      process.env.DB_PASSWORD,
-      {
-        host: 'localhost',
-        dialect: 'postgres',
-        dialectOptions: {
-          decimalNumbers: true,
-        },
-      }
-    );
-
-// const User = (sequelize);
-
-export { sequelize, User };
+User.hasMany(Books, {foreignKey: 'assignedUserId'})
+Books.belongsTo(User, {foreignKey:"assignedUserId", as: 'assignedUser'})
+export {Books,User  };
