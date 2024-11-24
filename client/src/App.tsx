@@ -1,15 +1,13 @@
 import { Outlet } from 'react-router-dom';
-
 import Navbar from './components/Navbar';
-// checkout main. add todos as needed
-//maybe add the Routes here instead of main. 
-function App() {
+
+const App = () => {
   return (
     <div>
       <Navbar />
-      
+      <Outlet />
     </div>
   );
-}
+};
 
 export default App;
