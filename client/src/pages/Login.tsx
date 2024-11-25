@@ -1,7 +1,7 @@
 //handle login page
 
 import { useState, type FormEvent, type ChangeEvent } from 'react';
-
+import "../styles/login.css"
 import Auth from '../utils/auth';
 import { login } from '../api/authAPI';
 import type { UserLogin } from '../interfaces/UserLogin';
@@ -33,36 +33,44 @@ const Login = () => {
   };
 
   return (
-    <div className='form-container'>
-      <form className='form login-form' onSubmit={handleSubmit}>
-        <h1>Login</h1>
-        <div className='form-group'>
-          <label>Username</label>
+    <div className='all'>
+    <form className='loginHeader' onSubmit={handleSubmit}>
+      <h1 className="padd">Login</h1>
+      <div className='all'>
+        <div className='input-container'>
+         
           <input
-            className='form-input'
+            id='username'
+            className='box'
             type='text'
             name='username'
+            placeholder='UserName'
             value={loginData.username || ''}
             onChange={handleChange}
           />
         </div>
-        <div className='form-group'>
-          <label>Password</label>
+      </div>
+      <div className='all'>
+        <div className='input-container'>
+        
           <input
-            className='form-input'
+            id='password'
+            className='box'
             type='password'
             name='password'
+            placeholder='Password'
             value={loginData.password || ''}
             onChange={handleChange}
           />
         </div>
-        <div className='form-group'>
-          <button className='btn btn-primary' type='submit'>
-            Login
-          </button>
-        </div>
-      </form>
-    </div>
+      </div>
+      <div className='all'>
+        <button className='button' type='submit'>
+          Login
+        </button>
+      </div>
+    </form>
+  </div>
   );
 };
 
