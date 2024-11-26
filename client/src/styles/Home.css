@@ -1,0 +1,38 @@
+.hero-section {
+    display: flex;
+    flex-direction: column;  /* Stack items vertically */
+    justify-content: flex-start; /* Align items to the top */
+    align-items: center; /* Center items horizontally */
+    height: auto;  /* Adjusted: Remove the forced full height */
+    position: relative;
+    margin-top: 20vh; /* Adjust: Reduced space above the section */
+}
+
+.hero-title {
+    font-family: 'Georgia', serif;
+    color: #EADDDD;
+    font-size: 3rem;
+    font-weight: normal;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 0; /* Reset margin */
+}
+
+.suggestion-title {
+    font-family: 'Georgia', serif;
+    font-weight: normal;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #EADDDD;
+    text-align: center;
+    margin: 10px 0 50px 0;
+}
+
+.carousel-section {
+    display: flex;
+    justify-content: center; /* Center carousel horizontally */
+    align-items: center;
+    margin-top: 10px; /* Adjusted: Reduced space between text and carousel */
+    width: 100%; /* Ensure carousel spans the available width */
+    max-width: 800px; /* Optional: Limit the carousel's width for better aesthetics */
+}
