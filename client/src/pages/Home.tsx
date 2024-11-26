@@ -2,7 +2,7 @@
 // import { retrieveUsers } from "../api/userAPI";
 // import type { UserData } from "../interfaces/UserData";
 // import ErrorPage from "./ErrorPage";
-import Navbar from "../components/Navbar";
+// import Navbar from "../components/Navbar";
 // import auth from '../utils/auth';
 
 const Home = () => {
