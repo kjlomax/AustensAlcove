@@ -9,4 +9,4 @@ const User = UserMore(sequelize);
 
 User.hasMany(Books, {foreignKey: 'assignedUserId'})
 Books.belongsTo(User, {foreignKey:"assignedUserId", as: 'assignedUser'})
-export {Books,User  };
+export {Books,User, sequelize};
