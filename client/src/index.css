@@ -19,9 +19,18 @@
  */
 body {
   margin: 0;
+  /* Background setup */
+  background-image: url('/assets/header-image.png'); /* Path to your image */
+  background-size: cover; /* Ensure the image covers the viewport */
+  background-repeat: no-repeat; /* Prevent tiling */
+  background-attachment: fixed; /* Keeps the image fixed as you scroll */
+  background-position: center; /* Center the image */
+
+  /* Fallback background color */
+  background-color: #2A2B2B;
 }
 
-/**
+/*
  * Render the `main` element consistently in IE.
  */
 main {

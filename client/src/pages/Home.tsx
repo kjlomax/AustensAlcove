@@ -1,51 +1,34 @@
-import { useState, useEffect, useLayoutEffect } from "react";
-import { retrieveUsers } from "../api/userAPI";
-import type { UserData } from "../interfaces/UserData";
-import ErrorPage from "./ErrorPage";
-
-import auth from '../utils/auth';
+import React from 'react';
+import Carousel from '../components/Carousel';
+import Button from '../components/Button'; 
+import '../styles/Home.css';
 
 const Home = () => {
-//does something along the line of confirming and logging in might have put this in the log in page
-    const [users, setUsers] = useState<UserData[]>([]);
-    const [error, setError] = useState(false);
-    const [loginCheck, setLoginCheck] = useState(false);
+  const handlePrevious = () => {
+    console.log('Previous button clicked');
+    // Implement previous button logic
+  };
 
-    useEffect(() => {
-        if (loginCheck) {
-            fetchUsers();
-        }
-    }, [loginCheck]);
+  const handleNext = () => {
+    console.log('Next button clicked');
+    // Implement next button logic
+  };
 
-    useLayoutEffect(() => {
-        checkLogin();
-    }, []);
-
-    const checkLogin = () => {
-        if (auth.loggedIn()) {
-            setLoginCheck(true);
-        }
-    };
-
-    const fetchUsers = async () => {
-        try {
-            const data = await retrieveUsers();
-            setUsers(data)
-        } catch (err) {
-            console.error('Failed to retrieve tickets:', err);
-            setError(true);
-        }
-    }
-
-    if (error) {
-        return <ErrorPage />;
-    }
-
-    return (
-        <>
-            {/* todo add the home page itself design*/}
-        </>
-    );
+  return (
+    <div className="home">
+      <header className="hero-section">
+        <h1 className="hero-title">Austen's Alcove</h1>
+        <h2 className="suggestion-title">Need a suggestion?</h2>
+      </header>
+      {/* <section className="carousel-section"> */}
+        <Carousel />
+      {/* </section> */}
+      <section className="button-section">
+        <Button text="Create a Profile" onClick={handlePrevious} variant="left" />
+        <Button text="Search for Readers" onClick={handleNext} variant="right" />
+      </section>
+    </div>
+  );
 };
 
 export default Home;

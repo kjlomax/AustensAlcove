@@ -1,0 +1,15 @@
+
+
+/* Ensures the carousel container is centered */
+
+
+/* Adjust the carousel item size */
+
+
+/* Style for the image */
+.carousel-image {
+  width: 100%; /* Adjust image size */
+  height: 400px; /* Adjust image size */
+  object-fit: contain;
+}
+

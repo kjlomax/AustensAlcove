@@ -1,0 +1,47 @@
+/* General button styles */
+.btn {
+    font-family: 'Georgia', serif;  /* Font family as per your previous style */
+    font-size: 1rem;  /* Adjust button text size */
+    padding: 10px 20px;  /* Adjust padding for smaller buttons */
+    border: none;
+    border-radius: 50px;  /* Strong border radius */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;  /* Smooth transition */
+    display: flex;
+    justify-content: center; /* Center the text horizontally */
+    align-items: center; /* Center the text vertically */
+    text-align: center; /* Make sure the text is centered */
+  }
+  
+  /* Left Button */
+  .btn.left {
+    background-color: #EADDDD;  /* Fill color */
+    color: #7E4D50;  /* Text color */
+    border: none;
+  }
+  
+  .btn.left:hover {
+    background-color: #7E4D50;  /* Change color on hover */
+    color: #EADDDD;
+  }
+  
+  /* Right Button */
+  .btn.right {
+    background-color: transparent;
+    border: 2px solid #EADDDD;  /* Border stroke */
+    color: #EADDDD;  /* Text color */
+  }
+  
+  .btn.right:hover {
+    background-color: #EADDDD;
+    color: #7E4D50;
+  }
+  
+  .button-section {
+    display: flex;           /* Use flexbox to arrange items side by side */
+    justify-content: center; /* Center the buttons horizontally */
+    align-items: center;     /* Center the buttons vertically (optional) */
+    gap: 20px;               /* Space between the two buttons */
+    margin: 20px 0 20px 0;        /* Space from the content above */
+  }
+  
