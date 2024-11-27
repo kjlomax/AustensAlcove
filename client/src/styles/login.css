@@ -2,10 +2,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60px;
+    height: 80px;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: black;
-   
+    color: white;
+    
 }
 
 .loginHeader {
@@ -33,7 +33,7 @@ label {
 }
 
 .box {
-    padding:  20px 30px;
+    padding:  25px 100px 22px 16px;
     height: 60px;
     border: 1px solid black;
     border-radius: 15px;
@@ -55,4 +55,5 @@ label {
    display: flex;
    justify-content: center;
     margin-top: 500px;
+    font-size: 60px;
 }
