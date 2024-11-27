@@ -1,6 +1,6 @@
 const forceDatabaseRefresh = false;
 // todo fix express stuff
-import * as express from 'express';
+import express from 'express';
 import routes from './routes/index.js';
 import { sequelize } from './models/index.js';
 

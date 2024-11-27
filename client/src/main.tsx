@@ -1,4 +1,5 @@
 import ReactDOM from 'react-dom/client';
+import ViewProfile from './pages/ViewProfile';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login />,
+      },
+      {
+        path: '/profile',
+        element: <ViewProfile />,
       },
     ],
   },
