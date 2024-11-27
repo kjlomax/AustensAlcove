@@ -7,6 +7,7 @@ interface BooksData {
   description: string;
   author: string;
   genre: string;
+  assignedUserId: number;
 
 }
 
@@ -19,6 +20,7 @@ export class Book extends Model<BooksData, BookDataCreation> implements BooksDat
   public description!: string;
   public author!: string;
   public genre!: string;
+  public assignedUserId!: number;
 
 }
 
@@ -45,6 +47,10 @@ export function BooksMore(sequelize: Sequelize): typeof Book {
     genre: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    assignedUserId: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
     }
   },
     {

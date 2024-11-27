@@ -1,11 +1,15 @@
 import { Books } from '../models/index.js';
 
-export const seedTickets = async () => {
+export const seedBooks = async () => {
   await Books.bulkCreate([
-    { name: 'Design landing page', author: 'In Progress', description: 'Create wireframes and mockups for the landing page.', assignedUserId: 2 },
-    { name: 'Set up project repository', status: 'Done', description: 'Create a new repository on GitHub and initialize it with a README file.', assignedUserId: 2 },
-    { name: 'Implement authentication', status: 'Todo', description: 'Set up user authentication using JWT tokens.', assignedUserId: 1 },
-    { name: 'Test the API', status: 'Todo', description: 'Test the API using Insomnia.', assignedUserId: 1 },
-    { name: 'Deploy to production', status: 'Todo', description: 'Deploy the application to Render.', assignedUserId: 2 },
+    { name: 'A Court of Silver Flames', description: 'Love, power, and faerie intrigue', author: 'Sarah J Maas', genre: 'Fantasy Romance', assignedUserId: 2 },
+
+    { name: 'Slaughterhouse 5', description: 'Existentialist view of human struggles.', author: 'Kurt Vonnegut', genre: 'Fiction', assignedUserId: 1},
+
+    { name: 'Beyonders', description: 'Ordinary teens, extraordinary magical quest.', author: 'Brandon Mull', genre: 'Fantasy', assignedUserId: 2 },
+
+    { name: 'Dear Black Girls', description: 'Empowering love letter to black girls.', author: "Aj'a Wilson", genre: 'Memoir', assignedUserId: 3 },
+
+    { name: 'Pride and Prejudice', description: 'Love, class, and witty misunderstandings.', author: 'Jane Austen', genre: 'Classic', assignedUserId: 1 },
   ]);
 };
