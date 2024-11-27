@@ -11,7 +11,7 @@ export const getUserId = async (req: Request, res: Response) =>{
         } else {
             res.status(400).json({message: 'User not found'})
         }
-    } catch (error) {
+    } catch (error: any) {
         res.status(500).json({message: error.message});
     }
 }
