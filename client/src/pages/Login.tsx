@@ -5,7 +5,7 @@ import "../styles/login.css"
 import Auth from '../utils/auth';
 import { login } from '../api/authAPI';
 import type { UserLogin } from '../interfaces/UserLogin';
-
+import { Link } from 'react-router-dom';
 const Login = () => {
   const [loginData, setLoginData] = useState<UserLogin>({
     username: '',
@@ -68,8 +68,15 @@ const Login = () => {
         <button className='button' type='submit'>
           Login
         </button>
+        
+      </div>
+      <div className='all'>
+        <p>If you havent sign up yet do it here: 
+            <Link to="/SignUp"> Sign In</Link>
+        </p>
       </div>
     </form>
+      
   </div>
   );
 };

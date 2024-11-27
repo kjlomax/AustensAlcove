@@ -1,7 +1,7 @@
 import { Router, type Request, type Response } from 'express';
 import { User } from '../models/user.js';
-import jwt from 'jsonwebtoken';
-import bcrypt from 'bcrypt';
+import * as jwt from 'jsonwebtoken';
+import * as bcrypt from 'bcrypt';
 
 export const login = async (req: Request, res: Response) => {
   const { username, password } = req.body;
@@ -24,9 +24,33 @@ export const login = async (req: Request, res: Response) => {
   return res.json({ token });
 };
 
-const router = Router();
 
+
+
+
+export const signUp = async (req: Request, res: Response) => {
+    const {username,email,password} = req.body;
+    try {
+      if(!username||!email||!password){
+        return res.status(400).json({message: 'All field needs to be entered'})
+      }
+      const user = await User.create({username,email,password});
+      if (!user){
+        return res.status(401).json({message: 'failed authentication'})
+
+      }
+      const secretKey = process.env.JWT_SECRET_KEY || '';
+      const token = jwt.sign({username},secretKey,{expiresIn: '1hr'})
+      return res.json({token});
+    } catch (error) {
+      return res.status(500).json({message: `authRoute error`})
+    }
+    
+};
+
+
+const router = Router();
 // POST /login - Login a user
 router.post('/login', login);
-
+router.post('/signUp',signUp)
 export default router;

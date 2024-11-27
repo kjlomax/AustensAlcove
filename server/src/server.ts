@@ -2,7 +2,7 @@ const forceDatabaseRefresh = false;
 // todo fix express stuff
 import * as express from 'express';
 import routes from './routes/index.js';
-import { sequelize } from './models/index.js';
+import sequelize from './config/connections.js'
 
 const app = express();
 const PORT = process.env.PORT || 3001;
