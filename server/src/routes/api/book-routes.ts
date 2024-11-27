@@ -1,14 +1,13 @@
 import express from 'express';
 import type { Request, Response } from 'express';
-import { Book } from '../../models/books.js';
-import { User } from '../../models/user.js';
+import { Books, User } from '../../models/index.js';
 
 
 const router = express.Router();
 // GET books
 router.get('/', async (_req: Request, res: Response) => {
     try {
-      const books = await Book.findAll({
+      const books = await Books.findAll({
         include: [
           {
             model: User,
