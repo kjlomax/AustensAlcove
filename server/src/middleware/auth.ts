@@ -1,6 +1,6 @@
 //todo fix the jwt
 import type { Request, Response, NextFunction } from 'express';
-import * as jwt from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 
 interface JwtPayload {
   username: string;

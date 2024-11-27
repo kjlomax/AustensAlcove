@@ -30,10 +30,6 @@ const router = createBrowserRouter([
       //   element: <ViewProfile />,
       // },
       {
-        path: '/search-library',
-        element: <SearchLibrary/>,
-      },
-      {
         path: 'SignUp',
         element: <SignIn/>,
       }
