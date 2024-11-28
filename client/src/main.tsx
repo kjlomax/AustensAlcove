@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client';
-import ViewProfile from './pages/ViewProfile';
+// import ViewProfile from './pages/ViewProfile';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 
@@ -9,6 +9,7 @@ import ErrorPage from './pages/ErrorPage.tsx';
 import Home from './pages/Home.tsx';
 import Login from './pages/Login.tsx';
 import SearchLibrary from './pages/SearchLibrary.tsx';
+import ViewProfile from './pages/ViewProfile.tsx';
 
 //todo add pages and path
 const router = createBrowserRouter([
@@ -25,13 +26,17 @@ const router = createBrowserRouter([
         path: '/login',
         element: <Login />,
       },
-      // {
-      //   path: '/profile',
-      //   element: <ViewProfile />,
-      // },
+      {
+        path: '/profile',
+        element: <ViewProfile />,
+      },
       {
         path: 'SignUp',
         element: <SignIn/>,
+      },
+      {
+        path: '/search-library',
+        element: <SearchLibrary/>,
       }
     ],
   },

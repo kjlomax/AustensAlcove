@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import '../styles/Carousel.css';
 
@@ -13,7 +13,7 @@ const carouselData = [
 
 const CarouselComp = () => {
   const [focusedIndex, setFocusedIndex] = useState(2); // Start with the middle book as focused
-
+  console.log(focusedIndex)
   const settings = {
     dots: true,
     infinite: false, // No repeating
@@ -22,10 +22,11 @@ const CarouselComp = () => {
     slidesToScroll: 1,
     centerMode: true, // Center the middle book
     focusOnSelect: true, // Focus on the selected book
-    beforeChange: (current: number, next: number) => setFocusedIndex(next), // Set focused book when changing
-    arrows: true, // Show arrows
+    beforeChange: ( next: number) => setFocusedIndex(next), // Set focused book when changing
+   
   };
-
+  
+  console.log(settings)
   return (
 
     <Carousel>
