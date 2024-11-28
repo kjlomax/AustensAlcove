@@ -3,9 +3,16 @@ import { useState } from 'react';
 import '../styles/Navbar.css';
 import { FaBars } from 'react-icons/fa';
 import { AiOutlineClose } from 'react-icons/ai';  // Importing the "X" icon
+import AUTH from '../utils/auth';
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(() => AUTH.loggedIn());
+
+const userGreeting = () => {
+  console.log(AUTH.getProfile())
+  return `Hey, ${AUTH.getProfile().username}!`
+}
 
   return (
     <>
@@ -25,8 +32,11 @@ const Navbar = () => {
       </Link>
 
       {/* Sign up/Login Link */}
+      
       <div className="auth-link">
-        <Link to="/login">Sign up/Login</Link>
+        {!isLoggedIn ? <Link to="/login">Sign up/Login</Link> : (
+          <h4 className = 'userGreetingClass' >{userGreeting()}</h4>
+        )}
       </div>
 
       {/* Side Navigation */}
@@ -49,6 +59,11 @@ const Navbar = () => {
             <li>
               <Link to="/profile">View My Profile</Link>
             </li>
+            {isLoggedIn && (
+          <li>
+          <a onClick={() => AUTH.logout()}>Logout</a>
+          </li>
+        )}
           </ul>
         </nav>
       </div>
