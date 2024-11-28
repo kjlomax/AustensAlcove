@@ -1,52 +1,110 @@
-//search page for books
-
-import  { useState } from "react";
-import {searchedBook} from '../api/bookAPI';
+import { useState } from "react";
+import { searchedBook } from '../api/bookAPI';
 import { BookData } from "../interfaces/BookData";
-import '../styles/login.css'
-const SearchLibrary = ()=>{
+import '../styles/login.css';
+
+const SearchLibrary = () => {
     const [query, setQuery] = useState('');
-    const [result, setResult]=useState<BookData[]>([]);
-    const [readList, setReadList]=useState<BookData[]>([]);
-    const searchedChanged = (event:any)=>{
-        setQuery(event.target.value)
-    }
-    const handleSearch = async()=>{
-        if(query.trim()!==''){
+    const [result, setResult] = useState<BookData[]>([]);
+    const [wantToReadList, setWantToReadList] = useState<BookData[]>([]);
+    const [doneReadingList, setDoneReadingList] = useState<BookData[]>([]);
+
+    const searchedChanged = (event: any) => {
+        setQuery(event.target.value);
+    };
+
+    const handleSearch = async () => {
+        if (query.trim() !== '') {
             const book = await searchedBook(query);
             setResult(book);
         }
-    }
-    const addToReadList= (book: BookData)=>{
-        setReadList(prevList=>[...prevList, book])
-    }
-    return(
-        <div className="all">
-            <input type= "text" value={query} onChange={searchedChanged} placeholder="Please Work Search"/>
-            <button onClick={handleSearch}>Search</button>
-        <div>
-            {result.map((book)=>(
-                <div key={book.cover_i}>
-                    <h2>{book.title}</h2>
-                    <h2>{book.author_name}</h2>
-                    {/* <p>{book.description}</p> */}
-                    {/* <img src={book.image} alt={book.author} /> */}
-                    <button onClick={()=> addToReadList(book)}>Add to Read List</button>
-                </div>
-            ))}
-        </div>
-        <div>
-            <h2>Your Read List</h2>
-            {readList.map((book)=>(
-                <div key={book.cover_i}>
-                    <h2>{book.title}</h2>
-                    <h2>{book.author_name}</h2>
-                </div>
-            ))}
-        </div>
-        </div>
-    )
-};
+    };
 
+    const addToWantToReadList = (book: BookData) => {
+        setWantToReadList(prevList => [...prevList, book]);
+    };
+
+    const markAsRead = (book: BookData) => {
+        if (!doneReadingList.some(b => b.cover_i === book.cover_i)) {
+            setDoneReadingList((prevList) => [...prevList, book]);
+            setWantToReadList((prevList) => prevList.filter(b => b.cover_i !== book.cover_i));
+        }
+    };
+
+    const saveListToDatabase = async (list: BookData[], listName: string) => {
+        try {
+            const response = await fetch('/api/save-list', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    listName,
+                    books: list,
+                }),
+            });
+            const data = await response.json();
+            console.log('List saved:', data);
+        } catch (error) {
+            console.error('Error saving list:', error);
+        }
+    };
+
+    const saveAllLists = () => {
+        if (wantToReadList.length > 0) {
+            saveListToDatabase(wantToReadList, 'Want to Read');
+        }
+        if (doneReadingList.length > 0) {
+            saveListToDatabase(doneReadingList, 'Done Reading');
+        }
+    };
+
+    return (
+        <div className="all">
+            <div>
+                <input type="text" value={query} onChange={searchedChanged} placeholder="Please Work Search" />
+                <button onClick={handleSearch}>Search</button>
+            </div>
+            <div>
+                {result.map((book) => {
+                    console.log(book);
+                    
+                    return (
+                        <div key={book.cover_i}>
+                            <h2>{book.title}</h2>
+                            <h3>{book.author_name ? book.author_name.join(', ') : "Unknown Author"}</h3>
+                            {book.cover_i && (
+                                <img
+                                    src={`https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`}
+                                    alt={book.title}
+                                />
+                            )}
+                            <button onClick={() => addToWantToReadList(book)}>Add to Want to Read List</button>
+                        </div>
+                    );
+                })}
+            </div>
+            <div>
+                <h2>Want to Read List</h2>
+                {wantToReadList.map((book) => (
+                    <div key={book.cover_i}>
+                        <h2>{book.title}</h2>
+                        <h3>{book.author_name}</h3>
+                        <button onClick={() => markAsRead(book)}>Mark as Read</button>
+                    </div>
+                ))}
+            </div>
+            <div>
+                <h2>Done Reading List</h2>
+                {doneReadingList.map((book) => (
+                    <div key={book.cover_i}>
+                        <h2>{book.title}</h2>
+                        <h3>{book.author_name}</h3>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );    
+};
 export default SearchLibrary;
-console.log('Rendering SearchLibary');
+console.log('Rendering SearchLibrary');
