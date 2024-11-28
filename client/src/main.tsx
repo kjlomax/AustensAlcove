@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom/client';
-import ViewProfile from './pages/ViewProfile';
+// import ViewProfile from './pages/ViewProfile';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
 
@@ -8,7 +8,7 @@ import SignIn from './pages/SignUp.tsx';
 import ErrorPage from './pages/ErrorPage.tsx';
 import Home from './pages/Home.tsx';
 import Login from './pages/Login.tsx';
-import SearchLibrary from './pages/SearchLibrary.tsx';
+// import SearchLibrary from './pages/SearchLibrary.tsx';
 
 //todo add pages and path
 const router = createBrowserRouter([
