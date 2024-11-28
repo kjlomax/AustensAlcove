@@ -4,6 +4,7 @@
 import { type JwtPayload, jwtDecode } from 'jwt-decode';
 import type { UserData } from '../interfaces/UserData';
 
+
 class AuthService {
   getProfile() {
     // Decode the JSON Web Token (JWT) using the jwtDecode function, specifying the expected payload type as UserData.
