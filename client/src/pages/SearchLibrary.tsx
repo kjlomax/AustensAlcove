@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { searchedBook } from '../api/bookAPI';
 import { BookData } from "../interfaces/BookData";
-import '../styles/login.css';
+import '../styles/SearchLibrary.css'; // Correct import for your CSS file
 
 const SearchLibrary = () => {
     const [query, setQuery] = useState('');
@@ -61,50 +61,53 @@ const SearchLibrary = () => {
 
     return (
         <div className="all">
-            <div>
-                <input type="text" value={query} onChange={searchedChanged} placeholder="Please Work Search" />
-                <button onClick={handleSearch}>Search</button>
+            <h1>Search the Alcove's Library</h1>
+            <div className="search-bar">
+                <input 
+                    type="text" 
+                    value={query} 
+                    onChange={searchedChanged} 
+                    placeholder="Search for a book" 
+                    className="input-box"
+                />
+                <button onClick={handleSearch} className="button">Search</button>
             </div>
-            <div>
-                {result.map((book) => {
-                    console.log(book);
-                    
-                    return (
-                        <div key={book.cover_i}>
-                            <h2>{book.title}</h2>
-                            <h3>{book.author_name ? book.author_name.join(', ') : "Unknown Author"}</h3>
-                            {book.cover_i && (
-                                <img
-                                    src={`https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`}
-                                    alt={book.title}
-                                />
-                            )}
-                            <button onClick={() => addToWantToReadList(book)}>Add to Want to Read List</button>
-                        </div>
-                    );
-                })}
-            </div>
-            <div>
-                <h2>Want to Read List</h2>
-                {wantToReadList.map((book) => (
-                    <div key={book.cover_i}>
+            <div className="result-list">
+                {result.map((book) => (
+                    <div key={book.cover_i} className="book-item">
                         <h2>{book.title}</h2>
-                        <h3>{book.author_name}</h3>
-                        <button onClick={() => markAsRead(book)}>Mark as Read</button>
+                        <h3>{book.author_name ? book.author_name.join(', ') : "Unknown Author"}</h3>
+                        {book.cover_i && (
+                            <img
+                                src={`https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`}
+                                alt={book.title}
+                            />
+                        )}
+                        <button onClick={() => addToWantToReadList(book)} className="button">Add to Want to Read List</button>
                     </div>
                 ))}
             </div>
-            <div>
+            <div className="want-to-read-list">
+                <h2>Want to Read List</h2>
+                {wantToReadList.map((book) => (
+                    <div key={book.cover_i} className="book-item">
+                        <h2>{book.title}</h2>
+                        <h3>{book.author_name}</h3>
+                        <button onClick={() => markAsRead(book)} className="button">Mark as Read</button>
+                    </div>
+                ))}
+            </div>
+            <div className="done-reading-list">
                 <h2>Done Reading List</h2>
                 {doneReadingList.map((book) => (
-                    <div key={book.cover_i}>
+                    <div key={book.cover_i} className="book-item">
                         <h2>{book.title}</h2>
                         <h3>{book.author_name}</h3>
                     </div>
                 ))}
             </div>
         </div>
-    );    
+    );
 };
+
 export default SearchLibrary;
-console.log('Rendering SearchLibrary');

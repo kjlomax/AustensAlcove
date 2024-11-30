@@ -8,11 +8,14 @@ import AUTH from '../utils/auth';
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(() => AUTH.loggedIn());
+  console.log(isLoggedIn)
 
 const userGreeting = () => {
   console.log(AUTH.getProfile())
   return `Hey, ${AUTH.getProfile().username}!`
 }
+console.log(AUTH.loggedIn())  // Check the result here
+
 
   return (
     <>
@@ -50,9 +53,9 @@ const userGreeting = () => {
             <li>
               <Link to="/search-library">Search Library</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/search-movies">Search Movies</Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/search-profiles">Search Profiles</Link>
             </li>

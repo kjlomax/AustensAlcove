@@ -53,7 +53,7 @@ body {
   width: 250px;
   height: 100%;
   background-color: #7E4D50;
-  color: white;
+  color: #EADDDD;
   overflow: hidden;
   transition: left 0.3s ease;
   z-index: 1000;
@@ -109,7 +109,11 @@ body {
   font-size: 18px;
   padding: 10px;
   border-radius: 5px;
+  display: block;
+  transition: color 0.3s ease;
+  /* margin-top: 1000px; */ /* Remove this line */
 }
+
 
 .auth-link a:hover {
   color: white;
@@ -129,5 +133,24 @@ body {
   cursor: pointer;
 }
 .userGreetingClass{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+  color: #EADEDD;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+a {
+  color: #EADDDD;
+  text-decoration: none;
+  font-size: 22px;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+a:hover {
   color: white;
+  cursor: pointer;
 }
