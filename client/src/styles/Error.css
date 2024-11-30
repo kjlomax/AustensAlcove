@@ -1,0 +1,80 @@
+/* error.css */
+.error-page {
+    font-family: 'Georgia', serif;
+    font-weight: normal;
+    margin: 0;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    text-align: center;
+    color: #EADDDD; /* Light text color */
+}
+
+.error-page h1 {
+    font-size: 2.5rem;
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #EADDDD;
+}
+
+.error-page p {
+    font-size: 1.2rem;
+    font-weight: normal;
+    margin-bottom: 30px;
+    color: #EADDDD;
+    max-width: 700px; /* Contain paragraph width for readability on desktop */
+    width: 100%;
+    line-height: 1.5; /* Add spacing between lines for better readability */
+    margin-left: auto;
+    margin-right: auto; /* Center the paragraph */
+}
+
+.error-page .button {
+    background-color: #47493D; /* Dark background for button */
+    color: #EADDDD; /* Light text color */
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 16px; /* Aggressive rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 200px;
+    max-width: 100%; /* Button width stays consistent */
+}
+
+.error-page .button:hover {
+    background-color: #B39987; /* Slightly darker on hover */
+    color: #47493D;
+    transform: scale(1.02); /* Subtle hover animation */
+}
+
+.error-page a {
+    color: #EADDDD;
+    text-decoration: underline;
+}
+
+.error-page a:hover {
+    color: #B39987; /* Darker hover effect */
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+    .error-page {
+        padding: 80px 20px; /* Adjust padding for larger screens */
+    }
+
+    .error-page h1 {
+        font-size: 3rem; /* Larger heading for desktop */
+    }
+
+    .error-page p {
+        font-size: 1.4rem; /* Slightly larger text on desktop */
+    }
+
+    .error-page .button {
+        width: 250px; /* Increase button width on desktop */
+    }
+}

@@ -1,13 +1,11 @@
-// sign in screen. if pop up delete
 import { useState, type FormEvent, type ChangeEvent } from 'react';
-import "../styles/login.css"
+import "../styles/SignUp.css"
 
 import { signUP } from '../api/signUp';
-import type {UserSign} from '../interfaces/UserSignin'
+import type { UserSign } from '../interfaces/UserSignin'
 
 const SignIn = () => {
   const [signinData, setSigninData] = useState<UserSign>({
- 
     email: '',
     username: '',
     password: ''
@@ -29,69 +27,60 @@ const SignIn = () => {
     try {
       const data = await signUP(signinData);
       console.log(`data:${data}`)
-     return data;
-     
+      return data;
     } catch (err) {
       console.error('Failed to sign up', err);
     }
   };
 
   return (
+// SignUp.tsx
 
+// Remove <div className='input-box-container'>
+<div className='form-container'>
+  <form className='form-header' onSubmit={handleSubmit}>
+    <h1 className="form-title">Sign Up</h1>
+    <div className='input-group'>
+      <input
+        id='email'
+        className='input-box'
+        type='text'
+        name='email'
+        placeholder='Email'
+        value={signinData.email || ''}
+        onChange={handleChange}
+      />
+    </div>
+    <div className='input-group'>
+      <input
+        id='username'
+        className='input-box'
+        type='text'
+        name='username'
+        placeholder='Username'
+        value={signinData.username || ''}
+        onChange={handleChange}
+      />
+    </div>
+    <div className='input-group'>
+      <input
+        id='password'
+        className='input-box'
+        type='password'
+        name='password'
+        placeholder='Password'
+        value={signinData.password || ''}
+        onChange={handleChange}
+      />
+    </div>
+    <div className='input-group'>
+      <button className='submit-button' type='submit'>
+        Sign Up
+      </button>
+    </div>
+  </form>
+</div>
 
-    <div className='all'>
-    <form className='loginHeader' onSubmit={handleSubmit}>
-      <h1 className="padd">Sign Up</h1>
-        <div className='all'>
-          <div className='input-container'>
-          
-            <input
-              id='password'
-              className='box'
-              type='text'
-              name='email'
-              placeholder='Email'
-              value={signinData.email || ''}
-              onChange={handleChange}
-            />
-          </div>
-        </div>
-      <div className='all'>
-        <div className='input-container'>
-         
-          <input
-            id='username'
-            className='box'
-            type='text'
-            name='username'
-            placeholder='UserName'
-            value={signinData.username || ''}
-            onChange={handleChange}
-          />
-        </div>
-      </div>
-      <div className='all'>
-        <div className='input-container'>
-        
-          <input
-            id='password'
-            className='box'
-            type='password'
-            name='password'
-            placeholder='Password'
-            value={signinData.password || ''}
-            onChange={handleChange}
-          />
-        </div>
-      </div>
-      
-      <div className='all'>
-        <button className='button' type='submit'>
-          Sign Up
-        </button>
-      </div>
-    </form>
-  </div>
   );
 };
 

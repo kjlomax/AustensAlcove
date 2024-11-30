@@ -1,0 +1,104 @@
+/* SearchLibrary.css */
+body {
+    font-family: 'Georgia', serif;
+    background-color: #EADDDD; 
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    color: #EADDDD;
+    font-style: italic;
+    font-size: 2rem;
+}
+
+h2 {
+    color: #EADDDD;
+    font-style: italic;
+    font-size: 1.5rem;
+}
+
+.all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px; /* Adjusted spacing */
+    padding: 20px;
+}
+
+.search-bar {
+    display: flex;
+    flex-direction: column; /* Stacks the input and button vertically */
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between input and button */
+}
+
+.input-box {
+    width: 200%; /* Adjusted width */
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #EADDDD;
+    border-radius: 16px;
+    background-color: transparent;
+    color: #EADDDD;
+    caret-color: #EADDDD;
+
+}
+
+.input-box::placeholder {
+    color: rgba(234, 221, 221, 0.5);
+}
+
+.input-box:focus {
+    border-color: #47493D;
+    outline: none;
+}
+
+.button {
+    background-color: #47493D;
+    color: #EADDDD;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+    background-color: #B39987;
+    color: #47493D;
+    transform: scale(1.02);
+}
+
+.result-list, .want-to-read-list, .done-reading-list {
+    width: 100%;
+    max-width: 600px; /* Restrict max width for the list */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between items */
+}
+
+.book-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.book-item img {
+    width: 150px; /* Image width */
+    height: 200px; /* Image height */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.book-item button {
+    margin-top: 10px;
+}
