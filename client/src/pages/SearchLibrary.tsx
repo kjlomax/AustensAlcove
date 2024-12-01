@@ -2,6 +2,7 @@ import { useState } from "react";
 import { searchedBook } from '../api/bookAPI';
 import { BookData } from "../interfaces/BookData";
 import '../styles/SearchLibrary.css'; // Correct import for your CSS file
+// import AUTH from '../utils/auth';
 
 const SearchLibrary = () => {
     const [query, setQuery] = useState('');

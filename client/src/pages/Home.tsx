@@ -35,6 +35,13 @@ const Home = () => {
         <Button text="Create a Profile"  onClick={handlePrevious} variant="left" /> 
         <Button text="Search for Readers" onClick={handleNext} variant="right" />
       </section>
+      <section className="about-section">
+        <h2 className="about-title">About Us</h2>
+        <p className="about-text">
+          Austen's Alcove is a place for book lovers to connect with other readers. 
+          Create a profile, search for readers, and get suggestions on what to read next.
+        </p>
+      </section>
     </div>
   );
 };

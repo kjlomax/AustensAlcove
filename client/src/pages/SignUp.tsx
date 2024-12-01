@@ -1,5 +1,5 @@
 import { useState, type FormEvent, type ChangeEvent } from 'react';
-import "../styles/SignUp.css"
+import '../styles/SignUp.css';
 
 import { signUP } from '../api/signUp';
 import type { UserSign } from '../interfaces/UserSignin'
@@ -37,10 +37,10 @@ const SignIn = () => {
 // SignUp.tsx
 
 // Remove <div className='input-box-container'>
-<div className='form-container'>
-  <form className='form-header' onSubmit={handleSubmit}>
-    <h1 className="form-title">Sign Up</h1>
-    <div className='input-group'>
+<div className='new'>
+  <form className='' onSubmit={handleSubmit}>
+    <h1 className="">Sign Up</h1>
+    <div className=''>
       <input
         id='email'
         className='input-box'

@@ -32,7 +32,7 @@ const ViewProfile=()=>{
             
         </div>
              
-         
+        
     
     )
 

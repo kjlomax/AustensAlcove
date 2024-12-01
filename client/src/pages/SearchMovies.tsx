@@ -1,4 +1,4 @@
-// search place for movies
+// // search place for movies
 
 const Movies=()=>{
     
