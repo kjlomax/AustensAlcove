@@ -10,6 +10,7 @@ import Home from './pages/Home.tsx';
 import Login from './pages/Login.tsx';
 import SearchLibrary from './pages/SearchLibrary.tsx';
 import ViewProfile from './pages/ViewProfile.tsx';
+import Movies from './pages/SearchMovies.tsx';
 
 //todo add pages and path
 const router = createBrowserRouter([
@@ -35,9 +36,14 @@ const router = createBrowserRouter([
         element: <SignIn/>,
       },
       {
+        path:'/search-movies',
+        element:<Movies/>
+      },
+      {
         path: '/search-library',
         element: <SearchLibrary/>,
-      }
+      },
+      
     ],
   },
 ]);

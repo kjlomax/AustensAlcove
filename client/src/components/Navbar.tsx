@@ -8,7 +8,7 @@ import AUTH from '../utils/auth';
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(() => AUTH.loggedIn());
-
+  console.log(setIsLoggedIn);
 const userGreeting = () => {
   console.log(AUTH.getProfile())
   return `Hey, ${AUTH.getProfile().username}!`
