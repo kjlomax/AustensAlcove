@@ -1,11 +1,11 @@
 //handle login page
-
 import { useState, type FormEvent, type ChangeEvent } from 'react';
-import "../styles/login.css"
+import "../styles/login.css";
 import Auth from '../utils/auth';
 import { login } from '../api/authAPI';
 import type { UserLogin } from '../interfaces/UserLogin';
 import { Link } from 'react-router-dom';
+
 const Login = () => {
   const [loginData, setLoginData] = useState<UserLogin>({
     username: '',
@@ -32,30 +32,26 @@ const Login = () => {
     }
   };
 
+  
   return (
-    <div className='all'>
-    <form className='loginHeader' onSubmit={handleSubmit}>
-      <h1 className="padd">Login</h1>
-      <div className='all'>
-        <div className='input-container'>
-         
+    <div className='form-container'>
+      <form className='form-header' onSubmit={handleSubmit}>
+        <h1 className="form-title">Login</h1>
+        <div className="input-group">
           <input
             id='username'
-            className='box'
+            className='input-box'
             type='text'
             name='username'
-            placeholder='UserName'
+            placeholder='Username'
             value={loginData.username || ''}
             onChange={handleChange}
           />
         </div>
-      </div>
-      <div className='all'>
-        <div className='input-container'>
-        
+        <div className="input-group">
           <input
             id='password'
-            className='box'
+            className='input-box'
             type='password'
             name='password'
             placeholder='Password'
@@ -63,21 +59,18 @@ const Login = () => {
             onChange={handleChange}
           />
         </div>
-      </div>
-      <div className='all'>
-        <button className='button' type='submit'>
-          Login
-        </button>
-        
-      </div>
-      <div className='all'>
-        <p>If you havent sign up yet do it here: 
-            <Link to="/SignUp"> Sign In</Link>
-        </p>
-      </div>
-    </form>
-      
-  </div>
+        <div className="input-group">
+          <button className='submit-button' type='submit'>
+            Login
+          </button>
+        </div>
+        <div className="links">
+          <p>If you haven't signed up yet, click here:  
+              <Link to="/SignUp"> Sign Up</Link>
+          </p>
+        </div>
+      </form>
+    </div>
   );
 };
 
