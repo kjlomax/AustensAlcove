@@ -1,34 +1,28 @@
 
-// import { useState,useEffect } from "react";
+import { useState,useEffect } from "react";
 
 import AUTH from '../utils/auth';
 import '../styles/login.css'
+import {getBook} from '../api/getBook'
 const ViewProfile=()=>{
+    const [datas, setData] = useState([])
+    useEffect(()=>{
+        getBook()
+            .then((data)=> setData(data))
+            .catch((err)=> console.log(err))
+    },[])
+console.log(AUTH.getProfile().username)
 
-
-
-
-    // const [data, setData]= useState([])
-    // console.log(`more: ${data}`)
-    // useEffect(()=>{
-    //     const getUsers= async()=>{
-    //         try {
-    //             const data = await retrieveUsers();
-    //             console.log(`data: ${data}`)
-    //             setData(data);
-    //         } catch (error) {
-                
-    //         }
-    //     }
-    //     getUsers();
-    // },[])
     return(
         <div className='all'>
-            
-           <h2>{AUTH.getProfile().id}</h2>
-           <h2>{AUTH.getProfile().email}</h2>
-           <h2>{AUTH.getProfile().username}</h2>
-                
+            <div className='padd'>
+            <h2>{AUTH.getProfile().username}</h2>
+           </div>
+
+           <h2>Your books</h2>
+            <div key={book.id}>
+
+            </div>
             
         </div>
              
