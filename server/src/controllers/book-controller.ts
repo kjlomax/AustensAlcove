@@ -56,3 +56,24 @@ export const deleteBook = async (req: Request, res: Response) => {
     }
   };
   
+
+  // export const createBook = async (req: Request, res: Response) => {
+  //   const {name,author} = req.body;
+  //   try {
+  //     if(!name||!author){
+  //       return res.status(400).json({message: 'All field needs to be entered'})
+  //     }
+  //     const user = await Books.create({name,author});
+  //     console.log(user)
+  //     if (!user){
+  //       return res.status(401).json({message: 'failed authentication'})
+
+  //     }
+  //     const secretKey = process.env.JWT_SECRET_KEY || '';
+  //     const token = jwt.sign({username},secretKey,{expiresIn: '1hr'})
+  //     return res.json({token});
+  //   } catch (error:any) {
+  //     return res.status(500).json({message: error.message})
+  //   }
+    
+// };

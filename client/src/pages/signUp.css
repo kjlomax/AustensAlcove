@@ -1,0 +1,80 @@
+/* Reset margin and padding for body */
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+/* Form container */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 500px; /* Optional: Limit max width of form */
+    margin: 0 auto; /* Ensure it is centered */
+}
+/* Center form title */
+.form-title {
+    text-align: center; /* Centers the title text */
+    margin-bottom: 20px; /* Adds space below the title */
+    color: #EADDDD; /* Optional: Match input styling */
+}
+/* Input fields container */
+.input-group {
+    display: flex;
+    justify-content: center; /* Ensures the input fields are centered */
+    width: 100%;
+}
+/* Input box styling */
+.input-box {
+    width: 100%; /* Ensures input takes full width of its container */
+    max-width: 550px; /* Slightly increased max width */
+    padding: 12px;
+    font-size: 1rem;
+    border: 2px solid #EADDDD;
+    border-radius: 12px;
+    background-color: transparent;
+    color: #EADDDD;
+    caret-color: #EADDDD;
+    box-sizing: border-box;
+    margin: 10px 0; /* Adds spacing between inputs */
+}
+/* Submit button */
+.submit-button {
+    background-color: #47493D;
+    color: #EADDDD;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 320px; /* Reasonable max width for button */
+}
+/* Button hover effect */
+.submit-button:hover {
+    background-color: #B39987;
+    color: #47493D;
+    transform: scale(1.02);
+}
+/* Links section styling */
+.links {
+    font-size: 0.9rem;
+    text-align: center;
+    color: #EADDDD;
+}
+.links a {
+    color: #EADDDD;
+    text-decoration: underline;
+    font-style: italic;
+}
+.links a:hover {
+    color: #B39987;
+}
