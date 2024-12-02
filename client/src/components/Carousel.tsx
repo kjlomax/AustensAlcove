@@ -4,11 +4,11 @@ import '../styles/Carousel.css';
 
 
 const carouselData = [
-  { id: 1, title: 'A Court of Silver Flames', image: '/assets/GIBBERISH.jpg' },
-  { id: 2, title: 'Beyonders', image: '/assets/beyonders.jpg' },
-  { id: 3, title: 'Slaughterhouse 5', image: '/assets/slaughterhouse.jpg' },
-  { id: 4, title: 'Dear Black Girls', image: '/assets/aja.jpg' },
-  { id: 5, title: 'Pride & Prejudice', image: '/assets/pride.jpg' }
+  { id: 1, title: 'A Court of Silver Flames', image: '/assets/1-acotar.jpg' },
+  { id: 2, title: 'Beyonders', image: '/assets/2-beyonders.jpg' },
+  { id: 3, title: 'Slaughterhouse 5', image: '/assets/3-slaughterhouse.jpg' },
+  { id: 4, title: 'Dear Black Girls', image: '/assets/4-aja.jpg' },
+  { id: 5, title: 'Pride & Prejudice', image: '/assets/5-pride.jpg' }
 ];
 
 const CarouselComp = () => {
@@ -32,7 +32,9 @@ const CarouselComp = () => {
     <Carousel>
      {carouselData.map((item) => (
         <Carousel.Item key={item.id} >
-          <img src={item.image} alt={item.title} className='carousel-image'/>
+          <img src={item.image}
+          alt={item.title}
+          className='carousel-image'/>
         </Carousel.Item>
         ))}
     </Carousel>

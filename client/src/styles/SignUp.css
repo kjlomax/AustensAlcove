@@ -12,14 +12,17 @@
 
 /* Form container */
 .new {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    max-width: 500px; /* Optional: Limit max width of form */
-    margin: 0 auto; /* Ensure it is centered */
+        font-family: 'Georgia', serif;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        max-width: 500px; /* Optional: Limit max width of form */
+        margin: 0 auto; /* Ensure it is centered */
 }
 
 /* Center form title */

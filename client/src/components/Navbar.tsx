@@ -71,10 +71,11 @@ console.log(AUTH.loggedIn())  // Check the result here
         )}
           </ul>
         </nav>
-        <Routes>
+        {/* <Routes>
           <Route path="/search-library" element={<SearchRoute />} />
+          <Route path="/search-movies" element={<SearchRoute />} />
           <Route path="/error" element={<ErrorPage />} />
-        </Routes>
+        </Routes> */}
       </div>
     </>
   );

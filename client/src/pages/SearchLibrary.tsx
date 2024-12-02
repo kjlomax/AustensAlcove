@@ -76,7 +76,7 @@ const SearchLibrary = () => {
             <div className="result-list">
                 {result.map((book) => (
                     <div key={book.cover_i} className="book-item">
-                        <h2>{book.title}</h2>
+                        <h2 className='sub-heading'>{book.title}</h2>
                         <h3>{book.author_name ? book.author_name.join(', ') : "Unknown Author"}</h3>
                         {book.cover_i && (
                             <img
@@ -92,7 +92,7 @@ const SearchLibrary = () => {
                 <h2>Want to Read List</h2>
                 {wantToReadList.map((book) => (
                     <div key={book.cover_i} className="book-item">
-                        <h2>{book.title}</h2>
+                        <h2 className='sub-heading'>{book.title}</h2>
                         <h3>{book.author_name}</h3>
                         <button onClick={() => markAsRead(book)} className="button">Mark as Read</button>
                     </div>
@@ -102,7 +102,7 @@ const SearchLibrary = () => {
                 <h2>Done Reading List</h2>
                 {doneReadingList.map((book) => (
                     <div key={book.cover_i} className="book-item">
-                        <h2>{book.title}</h2>
+                        <h2 className='sub-heading'>{book.title}</h2>
                         <h3>{book.author_name}</h3>
                     </div>
                 ))}

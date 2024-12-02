@@ -40,7 +40,7 @@ const SignIn = () => {
 <div className='new'>
   <form className='' onSubmit={handleSubmit}>
     <h1 className="">Sign Up</h1>
-    <div className=''>
+    <div className='input-group'>
       <input
         id='email'
         className='input-box'

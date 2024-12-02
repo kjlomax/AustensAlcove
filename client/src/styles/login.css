@@ -12,6 +12,10 @@
 
 /* Form container */
 .form-container {
+    font-family: 'Georgia', serif;
+    padding: 0;
+    height: 100vh;
+
     display: flex;
     justify-content: center;
     align-items: center;
