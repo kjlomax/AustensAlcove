@@ -1,12 +1,20 @@
-// search place for movies
-import type {Movies} from '../interfaces/MovieData'
-import{useState,useEffect} from 'react'
-import {searchMoviesID,searchMovie, saveMovie} from '../api/moviesAPI'
-const Movies=()=>{
-    const [query, setQuery] = useState('');
-    const [movieList, setMovieList] = useState<Movies[]>([]);
-    const [randomMovie, setRandomMovie] = useState<Movies| null>(null); 
+import { useState, useEffect } from 'react';
+import { searchMoviesID, searchMovie, saveMovie } from '../api/moviesAPI';
+import '../styles/Movies.css';
+import type { Movies } from '../interfaces/MovieData';
 
+const Movies = () => {
+  const [query, setQuery] = useState('');
+  const [movieList, setMovieList] = useState<Movies[]>([]);
+  const [randomMovie, setRandomMovie] = useState<Movies | null>(null); 
+  const [movie, setMovie] = useState<Movies>({
+    Title: '',
+    Genre: '',
+    Plot: '',
+    Director: '',
+    Poster: '',
+    Year: '',
+  });
 
   useEffect(() => {
     const fetchRandomMovies = async () => {
