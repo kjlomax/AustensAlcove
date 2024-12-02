@@ -6,13 +6,7 @@ const Movies=()=>{
     const [query, setQuery] = useState('');
     const [movieList, setMovieList] = useState<Movies[]>([]);
     const [randomMovie, setRandomMovie] = useState<Movies| null>(null); 
-    const [movie, setMovie]= useState<Movies>({ Title: '',
-      Genre: '',
-      Plot: '',
-      Director: '',
-      Poster: '',
-      Year: '',
-    })
+
 
     useEffect(() => {
       const fetchRandomMovies = async () => {
