@@ -38,7 +38,7 @@ body {
 
 @media screen and (max-width: 768px) {
   .navbar-bar {
-    background-color: rgba(238, 238, 238, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
     width: 100vw;
     height: 15vh;
     position: fixed;

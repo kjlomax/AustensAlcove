@@ -88,7 +88,7 @@ const Movies = () => {
                 <p>Released: {movie.Year}</p>
                 <p>Genre: {movie.Genre}</p>
                 <p>Plot: {movie.Plot}</p>
-                <button onClick={() => addToList(movie)}>Save to Database</button>
+                <button onClick={() => addToList(movie)}>Save to Collection</button>
               </div>
             ))
           )}

@@ -1,0 +1,93 @@
+/* Main container for the profile page */
+.profile-page {
+    font-family: 'Georgia', serif;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 100px;
+  }
+  
+  /* Header Section */
+  .profile-header {
+    margin-top: 200px;
+    text-align: center;
+    color: #eadddd;
+  }
+  
+  .profile-header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .profile-header h2 {
+    font-size: 1.5rem;
+    margin-top: 5px;
+    color: #b39987;
+  }
+  
+  /* Movie Collection Section */
+  .movie-collection {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 1200px;
+  }
+  
+  .movie-card {
+    background-color: #333;
+    border: 1px solid #eadddd;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+    text-align: center;
+    color: #eadddd;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  
+  .movie-card-img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+  }
+  
+  .movie-card h2 {
+    font-size: 1.5rem;
+    margin: 10px 0;
+  }
+  
+  .movie-card p {
+    font-size: 1rem;
+    margin: 5px 10px;
+  }
+  
+  .delete-button {
+    font-size: 1rem;
+    padding: 10px;
+    border: none;
+    background-color: #7e4d50;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .delete-button:hover {
+    background-color: #b39987;
+    color: #333;
+  }
+  
+  .profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers child elements horizontally */
+    width: 100%;
+    max-width: 1200px; /* Optional: Matches the max-width of .movie-collection */
+    margin: 0 auto; /* Centers the container horizontally */
+    gap: 30px;
+}
