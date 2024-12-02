@@ -26,7 +26,7 @@ console.log(AUTH.getProfile().username)
             
         </div>
              
-         
+        
     
     )
 

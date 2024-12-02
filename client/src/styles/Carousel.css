@@ -11,5 +11,15 @@
   width: 100%; /* Adjust image size */
   height: 400px; /* Adjust image size */
   object-fit: contain;
+
+    border-radius: 10px; /* Add border radius */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow */
+  
 }
+
+img {
+  border-radius: 10px !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
 

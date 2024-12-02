@@ -9,7 +9,7 @@
 
 // export default ErrorPage;
 
-import React from 'react';
+// import React from 'react';
 import { Link } from 'react-router-dom';
 import "../styles/error.css";  // Ensure you have the styling for the error page
 

@@ -1,31 +1,25 @@
-/* SearchLibrary.css */
-body {
+
+
+/* .libraryheading {
+    color: #EADDDD;
+    font-style: italic;
+    font-size: 2rem;
+} */
+
+/* h2 {
+    color: #EADDDD;
+    font-style: italic;
+    font-size: 1.5rem;
+} */
+
+.all {
     font-family: 'Georgia', serif;
-    background-color: #EADDDD; 
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
-
-h1 {
-    color: #EADDDD;
-    font-style: italic;
-    font-size: 2rem;
-}
-
-h2 {
-    color: #EADDDD;
-    font-style: italic;
-    font-size: 1.5rem;
-}
-
-.all {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
     gap: 30px; /* Adjusted spacing */
     padding: 20px;
@@ -68,7 +62,8 @@ h2 {
     border: none;
     border-radius: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    max-width: 320px;
 }
 
 .button:hover {

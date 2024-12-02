@@ -7,28 +7,32 @@
  */
  html {
   line-height: 1.15;
+  height: 100%;
   /* 1 */
   -webkit-text-size-adjust: 100%;
   /* 2 */
 }
+
 
 /* Sections
    ========================================================================== */
 /**
  * Remove the margin in all browsers.
  */
-body {
-  margin: 0;
-  /* Background setup */
-  background-image: url('/assets/header-image.png'); /* Path to your image */
-  background-size: cover; /* Ensure the image covers the viewport */
-  background-repeat: no-repeat; /* Prevent tiling */
-  background-attachment: fixed; /* Keeps the image fixed as you scroll */
-  background-position: center; /* Center the image */
 
-  /* Fallback background color */
+ 
+
+ body {
+  margin: 0;
+
+  /* Background setup */
+  background-image: url('/assets/header-image-2.jpg'), url('/assets/background-2.jpg'); 
+  background-size: cover, cover; 
+  background-repeat: no-repeat, no-repeat;
+  background-position: center top, center bottom;
   background-color: #2A2B2B;
 }
+
 
 /*
  * Render the `main` element consistently in IE.
@@ -44,6 +48,10 @@ main {
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
+  display: flex;
+  justify-content: center;
+  color: #EADDDD;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 /* Grouping content
@@ -388,7 +396,9 @@ h1 {
 }
 
 h2 {
-  font-size: 2rem;
+  color: #EADDDD;
+  font-style: italic;
+  font-size: 1.5rem;
 }
 
 h3 {
