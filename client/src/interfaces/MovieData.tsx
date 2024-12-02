@@ -5,4 +5,5 @@ export interface Movies{
     Director:string|null;
     Plot:string|null;
     Poster:string;
+    id:number;
 }

@@ -13,11 +13,11 @@ const Favorites = FavoritesMore(sequelize);
 const Wants = WantsMore(sequelize);
 const Movie = MoviesMore(sequelize)
 
-User.hasMany(Books, { foreignKey: 'assignedUserId' });
-User.hasMany(Favorites, { foreignKey: 'favoritesId' });
+User.hasMany(Books, { foreignKey: 'assignedUuserIdserId' });
+User.hasMany(Favorites, { foreignKey: 'userId' });
 User.hasMany(Movie,{ foreignKey: 'userId'});
 
-Books.belongsTo(User, { foreignKey: "assignedUserId", as: 'assignedUser' });
+Books.belongsTo(User, { foreignKey: "userId", as: 'user' });
 Wants.belongsTo(User, { foreignKey: "userId", as: 'user' });
 Movie.belongsTo(User,{foreignKey: 'userId', as: 'user'});
 export { Books, User, Favorites,Wants,Movie, sequelize };

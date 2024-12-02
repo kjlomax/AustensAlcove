@@ -1,10 +1,12 @@
 
+import Auth from '../utils/auth';
 const getBook = async()=>{
     try {
         const response = await fetch ('/api/books',{
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
+                Authorization: `Bearer ${Auth.getToken()} `,
 
             },
         });
@@ -26,7 +28,7 @@ const storeBook = async()=>{
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-
+                Authorization: `Bearer ${Auth.getToken()} `,
             },
         });
 

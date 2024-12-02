@@ -6,6 +6,6 @@ const router = express.Router();
 router.get('/', getAllMovies);
 router.get('/:id', getMovieId);
 router.delete('/:id', deleteMovie);
-router.post('/add',createMovie )
+router.post('/',createMovie )
 
 export { router as MovieRouter };
