@@ -1,11 +1,11 @@
-import { Link, Routes, Route } from 'react-router-dom';
+import { Link,  } from 'react-router-dom';
 import { useState } from 'react';
 import '../styles/Navbar.css';
 import { FaBars } from 'react-icons/fa';
 import { AiOutlineClose } from 'react-icons/ai';  // Importing the "X" icon
 import AUTH from '../utils/auth';
-import SearchRoute from './PrivateRoutes';
-import ErrorPage from '../pages/ErrorPage';
+// import SearchRoute from './PrivateRoutes';
+// import ErrorPage from '../pages/ErrorPage';
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
