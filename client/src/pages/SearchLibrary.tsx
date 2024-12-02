@@ -59,7 +59,7 @@ const SearchLibrary = () => {
             saveListToDatabase(doneReadingList, 'Done Reading');
         }
     };
-
+    console.log(saveAllLists)
     return (
         <div className="all">
             <h1>Search the Alcove's Library</h1>

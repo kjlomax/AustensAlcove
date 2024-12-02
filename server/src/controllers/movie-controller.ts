@@ -1,5 +1,6 @@
 import type { Request, Response } from 'express';
 import { Movie,User } from '../models/index.js';
+import {JwtPayload} from '../middleware/auth.js';
 export const getAllMovies = async (_req: Request, res: Response) => {
     try {
         const movie = await Movie.findAll({
@@ -56,17 +57,18 @@ export const getMovieId = async (req: Request, res: Response) =>{
   };
  
 export const createMovie = async (req: Request, res: Response): Promise<Response> => {
-    const { title, plot, director, genre, year, poster, userId } = req.body;
-  
+    const { Title, Plot, Director, Genre, Year, Poster } = req.body;
+    const token = req.user as JwtPayload;
+    console.log(token)
     try {
       const newMovie = await Movie.create({
-        title,
-        plot,
-        director,
-        genre,
-        year,
-        poster,
-        userId,
+        title: Title,
+        plot: Plot,
+        director:Director,
+        genre: Genre,
+        year: Year,
+        poster:Poster,
+        userId:token.userId,
       });
   
       return res.status(201).json(newMovie);

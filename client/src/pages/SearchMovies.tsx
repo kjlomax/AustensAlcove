@@ -7,14 +7,7 @@ const Movies = () => {
   const [query, setQuery] = useState('');
   const [movieList, setMovieList] = useState<Movies[]>([]);
   const [randomMovie, setRandomMovie] = useState<Movies | null>(null); 
-  const [movie, setMovie] = useState<Movies>({
-    Title: '',
-    Genre: '',
-    Plot: '',
-    Director: '',
-    Poster: '',
-    Year: '',
-  });
+
 
   useEffect(() => {
     const fetchRandomMovies = async () => {
@@ -84,7 +77,7 @@ const Movies = () => {
         </section>
         <h2>Search Results</h2>
         <section className="search-results">
-          {movieList.length === 0 ? (
+          {movieList.length === 1 ? (
             <p>No movies found</p>
           ) : (
             movieList.map((movie) => (

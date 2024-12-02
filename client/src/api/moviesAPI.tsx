@@ -1,5 +1,7 @@
 // add get movies based on search, delete movies, post movies onto profile
-const api = import.meta.env.VITE_OMDB_KEY;
+// const api = import.meta.env.VITE_OMDB_KEY;
+
+import Auth from '../utils/auth';
 const api_Url = `http://www.omdbapi.com/`;
 const searchMovie = async (query:string)=>{
     try {
@@ -55,7 +57,7 @@ const searchMoviesID = async () => {
         method: 'POST',
         headers: {
           'Content-Type':'application/json',
-  
+          Authorization: `Bearer ${Auth.getToken()} `
         },
         body: JSON.stringify(movieData)
       })
