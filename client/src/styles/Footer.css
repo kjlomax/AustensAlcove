@@ -1,0 +1,30 @@
+.footer {
+    background-color: #4A4A4A; /* Dark background */
+    color: #EADDDD; /* Light text color */
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px; /* Space above footer */
+}
+
+.footer-text {
+    font-family: 'Georgia', serif;
+    font-size: 1rem;
+    margin: 0 0 10px 0; /* Space below text */
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer-link {
+    color: #EADDDD;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.footer-link:hover {
+    color: #FFFFFF;
+}

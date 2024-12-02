@@ -1,5 +1,6 @@
 import { useState, type FormEvent, type ChangeEvent } from 'react';
 import '../styles/SignUp.css';
+import AUTH from '../utils/auth';
 
 import { signUP } from '../api/signUp';
 import type { UserSign } from '../interfaces/UserSignin'
@@ -19,14 +20,14 @@ const SignIn = () => {
       ...signinData,
       [name]: value,
     });
-    console.log(signinData)
+    // console.log(signinData)
   };
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     try {
       const data = await signUP(signinData);
-      console.log(`data:${data}`)
+      AUTH.login(data.token);
       return data;
     } catch (err) {
       console.error('Failed to sign up', err);
@@ -39,7 +40,7 @@ const SignIn = () => {
 // Remove <div className='input-box-container'>
 <div className='new'>
   <form className='' onSubmit={handleSubmit}>
-    <h1 className="">Sign Up</h1>
+    <h1 className="">Join Us</h1>
     <div className='input-group'>
       <input
         id='email'

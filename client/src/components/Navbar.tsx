@@ -58,9 +58,9 @@ console.log(AUTH.loggedIn())  // Check the result here
             <li>
               <Link to="/search-movies">Search Movies</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/search-profiles">Search Profiles</Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/profile">View My Profile</Link>
             </li>

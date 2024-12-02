@@ -11,6 +11,7 @@
     justify-content: center; /* Center the text horizontally */
     align-items: center; /* Center the text vertically */
     text-align: center; /* Make sure the text is centered */
+    max-width: 200px;  /* Limit the width of the button */
   }
   
   /* Left Button */

@@ -418,9 +418,9 @@ h6 {
 }
 
 p {
-  font-size: 1.1rem;
-  margin: 0 0 1rem;
-  line-height: 1.5;
+  font-size: 1rem;
+  color: #EADDDD;
+
 }
 
 ul,
@@ -434,7 +434,7 @@ label {
   display: inline-block;
 }
 
-input,
+/* input,
 select,
 textarea,
 button {
@@ -444,7 +444,7 @@ button {
 a {
   color: #1b89bc;
   text-decoration: none;
-}
+} */
 
 a:hover {
   color: #065b83;
@@ -994,20 +994,24 @@ a:hover {
 .btn {
   text-align: center;
   display: inline-block;
-  padding: 0.5rem 1.2rem;
-  margin: 0;
+  padding: 0.5rem 2rem; /* Increase horizontal padding */
+  width: 100%; /* Make the button take full width of its container */
+  max-width: 800px; /* Optional: Limit the maximum width */
+
   text-decoration: none;
   font-size: 1rem;
   border-radius: 0.3rem;
   border: 1px solid transparent;
   outline: none;
-  color: #1a1a1a;
-  background-color: #aeaeae;
+  color: #EADDDD;
+  background-color: #545F53;
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
+
 .btn:hover {
-  background-color: #cecece;
+  background-color: #B39987;
+  color: #7E4D50;
 }
 
 .btn.btn-squared {
