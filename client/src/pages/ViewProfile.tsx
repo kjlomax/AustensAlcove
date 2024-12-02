@@ -1,75 +1,69 @@
+import { useState, useEffect } from "react";
+import { retrieveMovies, deleteMovie } from "../api/getMovieApi";
+import { Movies } from "../interfaces/Movie";
+import AUTH from "../utils/auth";
+import "../styles/ViewProfile.css";
 
-import { useState,useEffect } from "react";
-import {retrieveMovies, deleteMovie} from '../api/getMovieApi'
-import {Movies} from '../interfaces/Movie'
-import AUTH from '../utils/auth';
-import '../styles/login.css'
-import {getBook} from '../api/getBook'
-const ViewProfile=()=>{
-    const [datas, setData] = useState([])
-    const[movieData, setMovieData]= useState<Movies[]>([])
-    useEffect(()=>{
-        getBook()
-            .then((data)=> setData(data))
-            .catch((err)=> console.log(err))
-    },[])
-    useEffect(() => {
-        console.log("Fetching movies...");
-        const fetchData = async () => {
-          const movies = await retrieveMovies();
-          console.log("Movies fetched:", movies);
-          setMovieData(movies);
-        };
-        fetchData();
-      }, []);
-console.log(AUTH.getProfile().username)
-console.log(datas)
-      const handleDelete = async(id:number)=>{
-        try {
-            await deleteMovie(id)
-            const movies = await retrieveMovies()
-            setMovieData(movies)
-        } catch (err) {
-            console.log(`could not delete`, err)
-        }
-        // deleteMovie(id).then((result)=>{
-        //     console.log(result)
-        // }).catch((err)=>{
-        //     console.log(`could not delete`, err)
-        // })
+const ViewProfile = () => {
+  const [movieData, setMovieData] = useState<Movies[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const movies = await retrieveMovies();
+        setMovieData(movies);
+      } catch (err) {
+        console.error("Error fetching movies:", err);
       }
-    return(
-        <div className='all'>
-            <div className='padd'>
-            <h2>{AUTH.getProfile().username}</h2>
-           </div>
+    };
+    fetchData();
+  }, []);
 
-           <h2>Your books</h2>
-            <div >
+  const handleDelete = async (id: number) => {
+    try {
+      await deleteMovie(id);
+      const movies = await retrieveMovies();
+      setMovieData(movies);
+    } catch (err) {
+      console.error(`Could not delete movie:`, err);
+    }
+  };
 
+  return (
+    <div className="profile-container">
+      <header className="profile-header">
+        <h1 className="profile-username">Welcome, {AUTH.getProfile().username}</h1>
+        <h2 className="profile-collection-title">Your Movie Collection</h2>
+      </header>
+
+      <section className="movie-collection">
+        {movieData.length === 0 ? (
+          <p className="no-movies-message">No movies found in your collection.</p>
+        ) : (
+          movieData.map((movie) => (
+            <div key={movie.id} className="movie-card">
+              <img
+                src={movie.poster || "/default-image.jpg"}
+                alt={movie.title}
+                className="movie-poster"
+              />
+              <h2 className="movie-title">{movie.title}</h2>
+              <p className="movie-director">Directed By: {movie.director}</p>
+              <p className="movie-year">Released: {movie.year}</p>
+              <p className="movie-genre">Genre: {movie.genre}</p>
+              <p className="movie-plot">Plot: {movie.plot}</p>
+              <button
+                className="delete-movie-button"
+                onClick={() => handleDelete(movie.id)}
+              >
+                Delete from Collection
+              </button>
             </div>
-           
-            {movieData.map((movie) => (
-                <div key={movie.id} >
-                    <img src={movie.poster } alt={movie.title } />
-                    <h2>{movie.title }</h2>
-                    <p>Directed By: {movie.director }</p>
-                    <p>Released: {movie.year }</p>
-                    <p>Genre: {movie.genre }</p>
-                    <p>Plot: {movie.plot }</p>
-                    <button onClick={() => handleDelete(movie.id)}>delete</button>
-                </div>
-            ))}
-                        
-            
-        </div>
-             
-        
-    
-    )
-
-
-}
-
+          ))
+        )}
+      </section>
+    </div>
+  );
+};
 
 export default ViewProfile;

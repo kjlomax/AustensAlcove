@@ -4,7 +4,7 @@ import '../styles/Button.css'; // Import the styles
 interface ButtonProps {
   text: string;
   onClick: () => void;
-  variant?: 'left' | 'right'; // Optional prop to choose button style (left or right)
+  variant?: 'left' | 'right' | 'primary';
 }
 
 const Button = ({ text, onClick, variant }: ButtonProps) => {

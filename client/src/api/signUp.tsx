@@ -2,7 +2,7 @@ import type { UserSign } from '../interfaces/UserSignin';
 
 const signUP = async (userInfo: UserSign) => {
   try {
-    const response = await fetch('/api/signUp', {
+    const response = await fetch('/auth/signUp', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

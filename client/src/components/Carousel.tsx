@@ -17,7 +17,7 @@ const CarouselComp = () => {
   const settings = {
     dots: true,
     infinite: false, // No repeating
-    speed: 500,
+    // speed: 500,
     slidesToShow: 5, // Show 5 books at a time
     slidesToScroll: 1,
     centerMode: true, // Center the middle book
@@ -31,7 +31,7 @@ const CarouselComp = () => {
 
     <Carousel>
      {carouselData.map((item) => (
-        <Carousel.Item key={item.id} >
+        <Carousel.Item key={item.id}>
           <img src={item.image}
           alt={item.title}
           className='carousel-image'/>

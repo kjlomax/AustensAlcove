@@ -21,6 +21,7 @@ console.log(AUTH.loggedIn())  // Check the result here
 
   return (
     <>
+    <div className='navbar-bar'></div>
       {/* Hamburger Icon */}
       <div
         className="hamburger-icon"
@@ -58,9 +59,9 @@ console.log(AUTH.loggedIn())  // Check the result here
             <li>
               <Link to="/search-movies">Search Movies</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/search-profiles">Search Profiles</Link>
-            </li>
+            </li> */}
             <li>
               <Link to="/profile">View My Profile</Link>
             </li>
@@ -78,6 +79,7 @@ console.log(AUTH.loggedIn())  // Check the result here
         </Routes> */}
       </div>
     </>
+    
   );
 };
 

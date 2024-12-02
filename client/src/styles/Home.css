@@ -25,7 +25,7 @@
     font-style: italic;
     color: #EADDDD;
     text-align: center;
-    margin: 10px 0 50px 0;
+
 }
 
 .carousel-section {
@@ -36,3 +36,116 @@
     width: 100%; /* Ensure carousel spans the available width */
     max-width: 800px; /* Optional: Limit the carousel's width for better aesthetics */
 }
+
+.image-text-section {
+    display: flex;
+    flex-direction: row; /* Default: Image and text side-by-side */
+    justify-content: space-between;
+    align-items: center;
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 1200px;
+}
+
+.image-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.home-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+}
+
+.text-container {
+    flex: 1;
+    padding: 20px;
+    font-family: 'Georgia', serif;
+    color: #333;
+}
+
+.text-title {
+    font-size: 2rem;
+    color: #EADDDD;
+    margin-bottom: 10px;
+}
+
+.text-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #EADDDD;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .image-text-section {
+        flex-direction: column; /* Stack image on top of text */
+        text-align: center; /* Center-align content */
+    }
+
+    .image-container {
+        margin-bottom: 20px; /* Add space between image and text */
+    }
+
+    .text-container {
+        padding: 10px; /* Reduce padding for smaller screens */
+    }
+
+    .text-title {
+        font-size: 1.8rem; /* Adjust font size for better fit */
+    }
+
+    .text-description {
+        font-size: 1rem; /* Adjust font size */
+    }
+    .hero-section {
+        align-items: center; /* Ensure all items are centered horizontally */
+      }
+    
+      .text-container {
+        text-align: center; /* Center text and child elements */
+      }
+    
+      .button {
+        display: flex;
+        justify-content: center; /* Center button horizontally */
+        align-items: center;
+        width: 100%; /* Ensure the button spans the width of its container */
+      }
+    
+      .btn {
+        margin: 0 auto; /* Center the button horizontally */
+        width: 80%; /* Optional: Reduce width for smaller screens */
+        max-width: 200px; /* Limit button's maximum width */
+      }
+}
+
+.text-container .button {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .text-container .button .primary {
+    background-color: #545F53;
+    color: #EADDDD;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .text-container .button .primary:hover {
+    background-color: #B39987;
+    transform: scale(1.05);
+  }
+  
+
+  

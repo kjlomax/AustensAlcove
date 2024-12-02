@@ -36,7 +36,7 @@ const Login = () => {
   return (
     <div className='form-container'>
       <form className='form-header' onSubmit={handleSubmit}>
-        <h1 className="form-title">Login</h1>
+        <h1 className="form-title">Announce Thy Presence</h1>
         <div className="input-group">
           <input
             id='username'
@@ -65,7 +65,7 @@ const Login = () => {
           </button>
         </div>
         <div className="links">
-          <p>If you haven't signed up yet, click here:  
+          <p>Yet to join our circle? Begin here:
               <Link to="/SignUp"> Sign Up</Link>
           </p>
         </div>

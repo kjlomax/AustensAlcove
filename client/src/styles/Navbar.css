@@ -36,6 +36,18 @@ body {
   z-index: 1002; /* Ensure it's above other elements */
 }
 
+@media screen and (max-width: 768px) {
+  .navbar-bar {
+    background-color: rgba(0, 0, 0, 0.1);
+    width: 100vw;
+    height: 15vh;
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+  }
+  
+}
+
 .logo {
   width: 35px;  /* Fixed size for logo */
   height: auto; /* Maintain aspect ratio */
