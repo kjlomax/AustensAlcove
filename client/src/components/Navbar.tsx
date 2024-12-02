@@ -1,13 +1,15 @@
-import { Link } from 'react-router-dom';
+import { Link, Routes, Route } from 'react-router-dom';
 import { useState } from 'react';
 import '../styles/Navbar.css';
 import { FaBars } from 'react-icons/fa';
 import { AiOutlineClose } from 'react-icons/ai';  // Importing the "X" icon
 import AUTH from '../utils/auth';
+import SearchRoute from './PrivateRoutes';
+import ErrorPage from '../pages/ErrorPage';
 
 const Navbar = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(() => AUTH.loggedIn());
+  const [isLoggedIn] = useState(() => AUTH.loggedIn());
   console.log(isLoggedIn)
 
 const userGreeting = () => {
@@ -53,9 +55,9 @@ console.log(AUTH.loggedIn())  // Check the result here
             <li>
               <Link to="/search-library">Search Library</Link>
             </li>
-            {/* <li>
+            <li>
               <Link to="/search-movies">Search Movies</Link>
-            </li> */}
+            </li>
             <li>
               <Link to="/search-profiles">Search Profiles</Link>
             </li>
@@ -69,6 +71,11 @@ console.log(AUTH.loggedIn())  // Check the result here
         )}
           </ul>
         </nav>
+        {/* <Routes>
+          <Route path="/search-library" element={<SearchRoute />} />
+          <Route path="/search-movies" element={<SearchRoute />} />
+          <Route path="/error" element={<ErrorPage />} />
+        </Routes> */}
       </div>
     </>
   );

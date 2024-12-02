@@ -18,7 +18,8 @@ const Home = () => {
   const handleNext = () => {
     console.log('Next button clicked');
     // Implement next button logic
-    
+    <Link to="/search-library"> </Link>
+    navigate(`/search-library`);
   };
 
   return (
@@ -33,7 +34,14 @@ const Home = () => {
       <section className="button-section">
         
         <Button text="Create a Profile"  onClick={handlePrevious} variant="left" /> 
-        <Button text="Search for Readers" onClick={handleNext} variant="right" />
+        <Button text="Search Library" onClick={handleNext} variant="right" />
+      </section>
+      <section className="about-section">
+        <h2 className="about-title">About Us</h2>
+        <p className="about-text">
+          Austen's Alcove is a place for book lovers to connect with other readers. 
+          Create a profile, search for readers, and get suggestions on what to read next.
+        </p>
       </section>
     </div>
   );
