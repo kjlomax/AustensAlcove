@@ -1,11 +1,26 @@
 import { useState, useEffect } from "react";
 import { retrieveMovies, deleteMovie } from "../api/getMovieApi";
+// import { getAllBooks, storeBook } from "../api/getBook";
 import { Movies } from "../interfaces/Movie";
+// import { Books } from "../interfaces/Book";
 import AUTH from "../utils/auth";
 import "../styles/ViewProfile.css";
 
 const ViewProfile = () => {
   const [movieData, setMovieData] = useState<Movies[]>([]);
+  // const [bookData, setBookData] = useState<Books[]>([]);
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const books = await getAllBooks();
+  //       storeBook(books);
+  //     } catch (err) {
+  //       console.error("Error fetching movies:", err);
+  //     }
+  //   };
+  //   fetchData();
+  // }, []);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -62,8 +77,12 @@ const ViewProfile = () => {
           ))
         )}
       </section>
+      {/* <section className="book-collection">
+        {bookData.length === 0 ? (
+          <p}
+      </section> */}
     </div>
   );
+// };
 };
-
 export default ViewProfile;

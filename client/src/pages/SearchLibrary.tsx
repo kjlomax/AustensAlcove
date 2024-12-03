@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { searchBooks } from '../api/bookAPI';
 import { BookData } from "../interfaces/BookData";
-import '../styles/login.css';
+import '../styles/SearchLibrary.css';
 
 const SearchLibrary = () => {
   const [query, setQuery] = useState('');
@@ -68,12 +68,13 @@ const SearchLibrary = () => {
   console.log(bookList);
 
   return (
-    <div className="all">
+    <div className="books-page">
       <h1>Search the Alcove's Library</h1>
 
-      <section>
+      <section className='search-section'>
         <input
           type="text"
+          className='input-box'
           value={query}
           onChange={handleSearchChange}
           placeholder="Search for a book"
@@ -82,7 +83,7 @@ const SearchLibrary = () => {
       </section>
 
       <h2>Search Results</h2>
-      <section>
+      <section className='search-results'>
         {bookList.length === 0 ? (
           <p>No books found</p>
         ) : (
@@ -95,7 +96,7 @@ const SearchLibrary = () => {
                 alt={book.title} 
               />
               <button onClick={() => addToWantToReadList(book)}>Add to Want to Read List</button>
-              <button onClick={() => addToDatabase(book)}>Save to Database</button>
+              <button onClick={() => addToDatabase(book)}>Save to Collection</button>
             </div>
           ))
         )}
