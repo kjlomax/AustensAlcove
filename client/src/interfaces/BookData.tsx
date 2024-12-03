@@ -1,5 +1,6 @@
 export interface BookData {
-    cover_i:number;
     title:string;
     author_name:string[];
+    cover_url:string;
+    cover_id:number;
 }
