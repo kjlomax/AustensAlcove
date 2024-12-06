@@ -2,7 +2,7 @@
 // const api = import.meta.env.VITE_OMDB_KEY;
 
 import Auth from '../utils/auth';
-const api_Url = `http://www.omdbapi.com/`;
+const api_Url = `https://www.omdbapi.com/`;
 const searchMovie = async (query:string)=>{
     try {
         const queryWithPlus = encodeURIComponent(query).replace(/%20/g, '+');
@@ -33,7 +33,7 @@ const searchMoviesID = async () => {
     const start = Math.floor(Math.random() * 99999) + 1;
     console.log(`Searching for movie with ID: tt0${start}`);
     const response = await fetch(
-      `http://www.omdbapi.com/?i=tt00${start}&apikey=4ff277ea`
+      `https://www.omdbapi.com/?i=tt00${start}&apikey=4ff277ea`
     );
     const data = await response.json();
 
